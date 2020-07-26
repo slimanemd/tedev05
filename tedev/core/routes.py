@@ -3,7 +3,7 @@ from flask import request, render_template
 #
 from tedev.app import app
 from tedev.core.models.model_tedevB import Participant, Employee
-from tedev.data.data_tedevB import participant_fields, employee_fields
+from tedev.data.data_tedevB import participant_fields, employee_fields, employee_labels, participant_labels
 from tedev.core.forms import ParticipantForm, EmployeeForm
 from tedev.core.helpers import create_or_edit_entity
 
@@ -23,6 +23,8 @@ def entities(entities):
     #
     entity_list = (Employee if entities == 'employees' else Participant).query.all()
     entity_fields = (employee_fields if entities == 'employees' else participant_fields)
+    entity_labels = (employee_labels if entities == 'employees' else participant_labels)
+
     Entities = ('Employees' if entities == 'employees' else 'Participants')
 
     return render_template(
@@ -30,6 +32,7 @@ def entities(entities):
         data={ 'entities_name': entities,
                'Entities_name': Entities,
                'fields': entity_fields,
+               'labels': entity_labels,
                'entities': entity_list,
                'show_navbar': 'N'}
     )

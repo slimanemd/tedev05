@@ -5,7 +5,7 @@
     <h1>{{ Entities_name }}</h1>
     <center>
     <table border="1" style="border:1px solid #00cc7a">
-        <tr>{% for field in data.fields %}<td>{{ field }}</td>{% endfor %}</tr>
+        <tr>{% for label in data.labels %}<td>{{ label }}</td>{% endfor %}</tr>
         {% for entity in data['entities'] %}
             <tr>{% for field in data.fields %}<td> {{ entity[field] }} </td>{% endfor %}</tr>
         {% endfor %}

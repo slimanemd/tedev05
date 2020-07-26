@@ -23,6 +23,19 @@ employee_fields = [
             "entreprise"
         ]
 
+employee_labels = [
+            "id",
+            "Prénom",
+            "Nom",
+            "Code",
+            "Ville",
+            "Telephone",
+            "Email",
+            "Adresse",
+            "Entreprise"
+        ]
+
+
 # --------------------------------------------------------------------------------------------#
 # Data
 # --------------------------------------------------------------------------------------------#
@@ -88,6 +101,18 @@ participant_fields = [
             "email",
             "address",
             "entreprise"
+        ]
+
+participant_labels = [
+            "id",
+            "Prénom",
+            "Nom",
+            "Code",
+            "Ville",
+            "Telephone",
+            "Email",
+            "Adresse",
+            "Entreprise"
         ]
 
 # --------------------------------------------------------------------------------------------#
