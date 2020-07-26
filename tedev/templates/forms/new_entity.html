@@ -1,0 +1,31 @@
+{%  set var101 = 'Nouveau' %}
+
+{% from 'macros/macros_forms.html' import addfield, add2fields %}
+
+{% extends 'layouts/main.html' %}
+{% block title %} {{ var101 }}  {{ data['Entity_name'] }}   {% endblock %}
+{% block content %}
+
+<div id="box">
+    <!-- border: 0px solid red; background-color:#a0d6b4; width:80%; margin:auto -->
+<div class="form-wrapper cl002" style="">
+    <form method="post" class="form" action="{{url_for('create_entity', entities=data['entities_name'])}}"
+    style=" margin:auto">
+        {{ form.hidden_tag() }}
+
+        <center>
+            <b><h3 class="form-heading cl001" style="margin:auto">{{ data['form_data']['title'] }}</h3></b>
+            <p class="cl001" style="margin-bottom:30px; margin-top:10px">{{ data['form_data']['description'] }}</p>
+        </center>
+
+        {% for dt in data['form_data']['data'] %}
+            {% if dt['f'] == 1%}  {{ addfield(  form, dt['label'], dt['fields'] ) }}
+            {% else %}            {{ add2fields(form, dt['label'], dt['fields']) }}  {% endif %}
+        {% endfor %}
+
+        <input type="submit" value="Ajouter" class="btn btn-primary btn-lg btn-block"
+               style="width:50%; margin:auto; margin-top:30px; background-color: #30D5C8;">
+    </form>
+</div>
+</div>
+{% endblock %}

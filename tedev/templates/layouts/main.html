@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% from 'macros/macros_main.html' import set_head, set_footer, set_foot_scripts, frm_search, set_navbar %}
+
+<html>
+{{ set_head() }}
+<body>
+    {% if data['show_navbar'] == 'Y'  %}
+        {{ set_navbar() }}
+    {% endif %}
+
+    <!-- Begin page content -->
+    <div id="wrap">        <!-- Begin page content -->
+        <main id="content" role="main" class="container">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-block alert-info fade in">
+                    <a class="close" data-dismiss="alert">&times;</a> {{ message }}
+                </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    {{ set_footer() }}
+    {{ set_foot_scripts() }}
+</body>
+</html>

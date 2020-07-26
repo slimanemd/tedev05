@@ -1,0 +1,23 @@
+{% macro addfield(form, label, fields, withsmall='') %}
+<div class="form-group cl003">
+    <label  class="cl001" style="font-weight:1" for={{fields[0]['field']}}>{{label}}</label>
+    {%  set ss = { 'class_' : 'form-control', 'autofocus' : true} %}
+   {{ form[fields[0]['field']](id=fields[0]['id'], class_ = 'form-control', autofocus = true, placeholder= fields[0]['placeholder'] ) }}
+    {% if withsmall != '' %} <small>{{ withsmall }}</small>{% endif %}
+</div>
+{% endmacro %}
+
+
+{% macro add2fields(form, label, fields, withsmall='') %}
+<div class="form-group">
+            <label class="cl001" style="font-weight:1">{{ label }}</label>
+            <div class="form-inline">
+                <div id={{fields[0]['id']}} class="form-group" style="margin:0px">
+                    {{ form[fields[0]['field']](class_ = 'form-control', placeholder= fields[0]['placeholder'] , autofocus = true) }}
+                </div>
+                <div class="form-group" id={{fields[1]['id']}}>
+                    {{ form[fields[1]['field']](class_ = 'form-control', placeholder= fields[1]['placeholder'] , autofocus = true) }}
+                </div>
+            </div>
+</div>
+{% endmacro %}

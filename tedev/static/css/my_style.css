@@ -1,0 +1,204 @@
+:root {
+  --main-bg-color: #007278;
+  --btn-bg-color: #30D5C8;
+}
+
+/* #a0d6b4 rgba(0,114,120,1);  background-color:#30D5C8 */
+/* =============================================*/
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--btn-bg-color);
+    /*border-color: #00cc7a;*/
+    border: none;
+}
+
+.btn-default {
+    border: none;
+    background-color: var(--btn-bg-color);  /*  #d8f3d8; #00cc7a; */
+    /*background-image: linear-gradient(#d8f3d8, #d8f3d8);*/
+    color: #444;
+}
+
+.a001 {
+    margin-bottom: 0px;
+    }
+
+th, td {
+    padding: 5px;
+    text-align: left;
+    vertical-align: top;
+}
+
+body {
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    /*background-color:#fff;*/  /*008080;*/
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: white;
+    color: #00805e;
+    transform: rotateY(180deg);
+}
+
+ul li img {
+    max-width: 105px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+ul li .views-field-field-team-name {
+    font-size: 18px;
+    color: #004e7d;
+    font-family: "rajdhanibold",sans-serif;
+}
+
+.cul001 li {
+    margin:20px;
+}
+
+.cul002 img {
+    border-radius: 0%;
+}
+
+.cul001 {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cul002 {
+    border-radius: 0%;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+#box {
+    position: relative;
+    width: 60%;
+    background-color: var(--main-bg-color);
+    border-radius: 4px;
+    padding: 2em 1.5em;
+    line-height: 1.5;
+    margin: 40px auto;
+}
+
+
+#boxi {
+    color:#fff;
+    background-color: var(--main-bg-color);
+    margin:150px;
+    padding:50px
+    position: relative;
+    width: 60%;
+    border-radius: 4px;
+    line-height: 1.5;
+}
+
+
+#box::before, #box::after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    top: 80%;
+    max-width:300px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    transform: rotate(-3deg);
+}
+
+#box::after {
+    transform: rotate(3deg);
+    right: 10px;
+    left: auto;
+}
+
+.bqMKDC {
+    background-image: url('data:image/svg+xml,
+    %0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22%2321AC21%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%20%20%20%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M12%202C6.48%202%202%206.48%202%2012s4.48%2010%2010%2010%2010-4.48%2010-10S17.52%202%2012%202zm-2%2015l-5-5%201.41-1.41L10%2014.17l7.59-7.59L19%208l-9%209z%22%2F%3E%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20'
+    );
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+#id002 {
+    width: 49%;
+}
+
+#id003 {
+    width: 49%;
+}
+
+
+#id005 {
+    width: 29%;
+}
+
+#id006 {
+    width: 69%;
+}
+
+
+/* #wrap > .container { padding: 0px 15px 0; } */
+
+/* #box {  margin: 30px auto; } */
+
+.cl001 {
+    color: white;
+}
+
+.cl002 {
+    background-color:var(--main-bg-color);
+    width:80%;
+    margin:auto
+}
+
+.cl003 {
+    width:99%;
+}

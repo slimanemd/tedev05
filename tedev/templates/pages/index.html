@@ -1,0 +1,35 @@
+{%  set var01 = 'Bienvenu au programme FEDEV'  %}
+{%  set var02 = 'Vous voulez participer au programme FEDEV?' %}
+{%  set var03 = 'Si vous voulez profiter de cette opporttunite, veuillez vous inscrire en cliquant sur le lien suivant :'  %}
+{%  set var04 = 'Merci d avoir inscrit à notre programme, au plaisir de vous voir'  %}
+{%  set var05 = 'Inscription au programme FEDEV'  %}
+{%  set var06 = 'Inscription au programme FEDEV'  %}
+
+{% extends 'layouts/main.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<center>
+    <div id="box" style="color:#fff; margin:150px; padding:50px">
+        <h1><b>{{ var01 }}</b></h1>
+
+        <p style="font-size:18px; padding:0px">
+            {% if data.registred == False %}
+                {{ var02 }} <br> {{ var03 }}
+            {% else %}
+                {{ var04 }}
+            {% endif %}
+        </p>
+        <br><br>
+        {% if data.registred == False %}
+            <a href="{{ url_for('create_entity', entities='participants') }}" style="font-size:20px; color:#e6ffe6">
+                {{ var05 }}
+            </a>
+        {% endif %}
+        <br>
+        <a href="{{ url_for('entities', entities='employees') }}" style="font-size:20px; color:#e6ffe6">{{ var06 }}</a>
+    </div>
+</center>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{%  set var101 = 'Nouveau' %}
+
+{% macro showentities( Entities_name) %}
+
+    <h1>{{ Entities_name }}</h1>
+    <center>
+    <table border="1" style="border:1px solid #00cc7a">
+        <tr>{% for field in data.fields %}<td>{{ field }}</td>{% endfor %}</tr>
+        {% for entity in data['entities'] %}
+            <tr>{% for field in data.fields %}<td> {{ entity[field] }} </td>{% endfor %}</tr>
+        {% endfor %}
+    </table>
+    </center>
+
+{%  endmacro %}
+
+{%  macro showcontent000(entity, Entity0) %}
+
+    <!-- button -->
+    <button id='btn_create_entity' type="button" class="btn btn-primary">{{ var101 }} {{ Entity0 }} </button> <hr>
+
+    <!-- list -->
+    {{ showentities( Entity0) }}
+
+    <!-- script -->
+    <script>
+        document.getElementById('btn_create_entity').onclick = function() {
+            window.location.href = "/{{ entity }}/create";
+        }
+    </script>
+
+{% endmacro %}
+
+
+<!-- ======================================================= -->
+{% extends 'layouts/main.html' %}   <!-- content -->
+{% block title %}eSEO | {{ data['Entities_name'] }} {% endblock %}
+{% block content %}        <div class="bqMKDC"></div>
+        <br><br>
+        {{ showcontent000(data['entities_name'], data['Entities_name']) }}
+{% endblock %}
+<!-- ======================================================= -->
+
